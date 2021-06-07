@@ -1,0 +1,13 @@
+{
+  "appId": "minik.project.covidapp",
+  "appName": "covidAPP",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

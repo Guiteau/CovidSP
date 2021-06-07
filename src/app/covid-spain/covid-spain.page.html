@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title> Covid España </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-spinner *ngIf="loading"></ion-spinner>
+<ion-content *ngIf="!loading">
+  <ion-card>
+    <div class="image-container">
+      <img class="image-covid" src="../../assets/images/covid.jpg"/>
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle>{{spainCountry.active_cases_text}} (casos activos)</ion-card-subtitle>
+      <ion-card-title>España</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="label-container">
+        <ion-label><span>Nuevos casos:</span> {{spainCountry.new_cases_text}}</ion-label><br>
+        <ion-label><span>Muertes hoy:</span> {{spainCountry.new_deaths_text}}</ion-label><br>
+        <ion-label><span>Total casos registrados:</span> {{spainCountry.total_cases_text}}</ion-label><br>
+        <ion-label><span>Total muertes:</span> {{spainCountry.total_deaths_text}}</ion-label><br>
+        <ion-label><span>Total recuperados:</span> {{spainCountry.total_recovered_text}}</ion-label><br>
+        <ion-label><span>Actualizado:</span> {{spainCountry.last_update}}</ion-label><br>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-list *ngFor="let ccaa of CCAASpain | filter: textToSearch: 'ccaa'">
+    <div class="ccaa-flag-container">
+      <ion-item (click)="goToCAorRegion(ccaa)"><img class="ccaa-flag" [src]="vaccinationSpainService.getCCAAFlag(ccaa)"/>
+        {{ccaa}}<br>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
+
+<ion-toolbar *ngIf="!loading">
+  <ion-searchbar animated placeholder="Buscar" (ionChange)="searchItem($event)"></ion-searchbar>
+</ion-toolbar>

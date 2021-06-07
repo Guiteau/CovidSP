@@ -1,0 +1,23 @@
+.card-container{
+    padding-top: 10px;
+}
+
+.label-container{
+    display: flex;
+    flex-direction: column;
+}
+
+ion-label{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.full-width{
+    padding-bottom: 20px;
+}
+
+.image-container{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}

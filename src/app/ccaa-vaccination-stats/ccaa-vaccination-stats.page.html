@@ -1,0 +1,45 @@
+<div class="card-container">
+  <ion-card>
+    <div class="image-container">
+      <img [src]="vaccinationSpainService.getCCAAFlag(ccaa.ccaa)" />
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle>{{ccaa.dosisAdministradas.toLocaleString()}} dosis administradas</ion-card-subtitle>
+      <ion-card-title>{{ccaa.ccaa}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="label-container">
+        <ion-label>
+          <span>Dosis entregadas:</span> {{ccaa.dosisEntregadas.toLocaleString()}}
+        </ion-label><br>
+        <ion-label>
+          <span>Dosis Moderna:</span> {{ccaa.dosisEntregadasModerna.toLocaleString()}}
+        </ion-label><br>
+        <ion-label>
+          <span>Dosis Pfizer:</span> {{ccaa.dosisEntregadasPfizer.toLocaleString()}}
+        </ion-label><br>
+        <ion-label>
+          <span>Dosis AstraZeneca:</span> {{ccaa.dosisEntregadasAstrazeneca.toLocaleString()}}
+        </ion-label><br>
+        <ion-label>
+          <span>Primera dosis total:</span> {{ccaa.dosisPrimeraDosis.toLocaleString()}}
+        </ion-label><br>
+        <ion-label>
+          <span>Pauta completa:</span> {{ccaa.dosisPautaCompletada.toLocaleString()}}
+        </ion-label><br>
+        <ion-label>
+          <span>Porcentaje población:</span> {{ccaa.porcentajePoblacionAdministradas * 100 | number}}%
+        </ion-label><br>
+        <ion-label>
+          <span>Porcentaje primera dosis:</span> {{ccaa.porcentajePoblacionPrimeraDosis * 100 | number}}%
+        </ion-label><br>
+        <ion-label>
+          <span>Porcentaje pauta completa:</span> {{ccaa.porcentajePoblacionCompletas * 100 | number}}%
+        </ion-label><br>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
+<section class="full-width">
+  <ion-button expand="full" color="secondary" (click)="goBack()">Volver</ion-button>
+</section>

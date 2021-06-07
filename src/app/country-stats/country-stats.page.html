@@ -1,0 +1,25 @@
+<div class="card-container">
+  <ion-card>
+    <div class="image-container">
+      <img [src]="restWorldService.getCountryFlag(country.country_text)" />
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle>{{country.active_cases_text}} (casos activos)</ion-card-subtitle>
+      <ion-card-title>{{country.country_text}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="label-container">
+        <ion-label>Nuevos casos: {{country.new_cases_text}}</ion-label>
+        <ion-label>Muertes hoy: {{country.new_deaths_text}}</ion-label>
+        <ion-label>Total casos registrados: {{country.total_cases_text}}</ion-label>
+        <ion-label>Total muertes: {{country.total_deaths_text}}</ion-label>
+        <ion-label>Total recuperados: {{country.total_recovered_text}}</ion-label>
+        <ion-label>Actualizado: {{country.last_update}}</ion-label>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
+<section class="full-width">
+  <ion-button expand="full" color="secondary" (click)="goBack()">Volver</ion-button>
+</section>

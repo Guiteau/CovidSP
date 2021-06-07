@@ -1,0 +1,29 @@
+ion-title{
+    padding-left: 55px;
+}
+
+ion-item{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.button-container{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.items-container{
+    padding-top: 50px;
+}
+
+.remember-container{
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+#remember-label{
+    padding-left: 10px;
+}

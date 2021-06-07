@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Covid en el mundo </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-spinner *ngIf="loading"></ion-spinner>
+<ion-content *ngIf="!loading">
+  <ion-card>
+    <div class="image-container">
+      <img class="image-world" src="../../assets/images/countries/world.png"/>
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle>{{world.active_cases_text}} (casos activos)</ion-card-subtitle>
+      <ion-card-title>Mundo</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="label-container">
+        <ion-label><span>Nuevos casos:</span> {{world.new_cases_text}}</ion-label><br>
+        <ion-label><span>Muertes hoy:</span> {{world.new_deaths_text}}</ion-label><br>
+        <ion-label><span>Total casos registrados:</span> {{world.total_cases_text}}</ion-label><br>
+        <ion-label><span>Total muertes:</span> {{world.total_deaths_text}}</ion-label><br>
+        <ion-label><span>Total recuperados:</span> {{world.total_recovered_text}}</ion-label><br>
+        <ion-label><span>Actualizado:</span> {{world.last_update}}</ion-label><br>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-list *ngFor="let country of allCountriesDataList | filter: textToSearch: 'country_text'">
+    <div class="country-and-flag">
+      <ion-item *ngIf="country.country_text != 'World'" (click)="goToCountry(country)"><img [src]="restWorldService.getCountryFlag(country.country_text)"/>
+        {{country.country_text}}<br>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
+
+<ion-toolbar *ngIf="!loading">
+  <ion-searchbar animated placeholder="Buscar" (ionChange)="searchItem($event)"></ion-searchbar>
+</ion-toolbar>

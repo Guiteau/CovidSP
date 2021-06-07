@@ -1,0 +1,20 @@
+img{
+    padding-right: 25px;
+}
+
+span{
+    font-weight: bold;
+}
+
+ion-label{
+    padding-bottom: 50px;
+}
+
+.image-world{
+    padding-left: 25px;
+}
+
+ion-spinner {
+    display: block;
+    margin: auto;
+}

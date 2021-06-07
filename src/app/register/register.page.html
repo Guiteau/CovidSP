@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Regístrate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text color="secondary">
+    <p>Registrándote y haciendo login en tu sesión nos ayudas a mejorar. Usaremos las estadísticas generadas por tu
+      usuario para darte una mejor experiencia.</p>
+  </ion-text>
+
+  <ion-list>
+    <form [formGroup]="registerForm">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="name" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellidos</ion-label>
+        <ion-input formControlName="surname" [(ngModel)]="surname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="white-space: pre-wrap;">Fecha de nacimiento</ion-label>
+        <ion-datetime placeholder="Elige fecha"
+          monthShortNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+          formControlName="date" [(ngModel)]="birthDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">País</ion-label>
+        <ion-select [(ngModel)]="country" formControlName="country">
+          <ion-select-option *ngFor="let country of countriesList" [value]="country">
+            {{country.countryName}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-radio-group formControlName="sex" [(ngModel)]="sex">
+          <ion-list-header>
+            <ion-label>Sexo</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Hombre</ion-label>
+            <ion-radio slot="start" color="success" value="h"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Mujer</ion-label>
+            <ion-radio slot="start" color="success" value="m"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password <p>*mínimo 7 caracteres</p></ion-label>
+        <br>
+        <ion-input type="password" formControlName="password" minlength="7" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Repite el password</ion-label>
+        <ion-input type="password" formControlName="passwordRepeated" minlength="7" [(ngModel)]="passwordRepeated"></ion-input>
+      </ion-item>
+
+      <div class="conditions-container">
+        <ion-checkbox color="primary" (click)="setConditions()"></ion-checkbox>
+        <ion-label>Acepto los términos y condiciones del apartado información</ion-label>
+      </div>
+      <ion-button [disabled]="!conditionsAccepted" (click)="validateForm()">Registrarse</ion-button>
+    </form>
+
+  </ion-list>
+
+</ion-content>

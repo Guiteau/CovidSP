@@ -1,0 +1,25 @@
+.label-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width{
+    padding-bottom: 20px;
+}
+
+.image-container{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 5px;
+}
+
+span{
+    font-weight: bold;
+}
+
+ion-card{
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    margin: 0 !important;
+}

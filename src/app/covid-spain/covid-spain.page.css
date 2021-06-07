@@ -1,0 +1,16 @@
+span{
+    font-weight: bold;
+}
+
+ion-label{
+    padding-bottom: 50px;
+}
+
+.ccaa-flag{
+    padding-right: 25px;
+}
+
+ion-spinner {
+    display: block;
+    margin: auto;
+}

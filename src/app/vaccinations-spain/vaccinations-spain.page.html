@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Vacunación España </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-spinner *ngIf="loading"></ion-spinner>
+<ion-content *ngIf="!loading">
+  <ion-card>
+    <div class="image-container">
+      <img src="../../assets/images/vaccinations/spain-flag.png" />
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle>{{allVaccinationsSpainDataList[20].dosisAdministradas.toLocaleString()}} dosis administradas
+      </ion-card-subtitle>
+      <ion-card-title>{{allVaccinationsSpainDataList[20].ccaa}} España</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="label-container">
+        <ion-label><span>Dosis entregadas:
+          </span> {{allVaccinationsSpainDataList[20].dosisEntregadas.toLocaleString()}}</ion-label><br>
+        <ion-label><span>Dosis Moderna:
+          </span> {{allVaccinationsSpainDataList[20].dosisEntregadasModerna.toLocaleString()}}</ion-label><br>
+        <ion-label><span>Dosis Pfizer:
+          </span> {{allVaccinationsSpainDataList[20].dosisEntregadasPfizer.toLocaleString()}}</ion-label><br>
+        <ion-label><span>Dosis AstraZeneca:
+          </span> {{allVaccinationsSpainDataList[20].dosisEntregadasAstrazeneca.toLocaleString()}}</ion-label><br>
+        <ion-label><span>Primera dosis total:
+          </span> {{allVaccinationsSpainDataList[20].dosisPrimeraDosis.toLocaleString()}}</ion-label><br>
+        <ion-label><span>Pauta completa:
+          </span> {{allVaccinationsSpainDataList[20].dosisPautaCompletada.toLocaleString()}}</ion-label><br>
+        <ion-label><span>Porcentaje población:
+          </span> {{allVaccinationsSpainDataList[20].porcentajePoblacionAdministradas * 100 | number}}%</ion-label><br>
+        <ion-label><span>Porcentaje primera dosis:
+          </span> {{allVaccinationsSpainDataList[20].porcentajePoblacionPrimeraDosis * 100 | number}}%</ion-label><br>
+        <ion-label><span>Porcentaje pauta completa:
+          </span> {{allVaccinationsSpainDataList[20].porcentajePoblacionCompletas * 100 | number}}%</ion-label><br>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-list *ngFor="let vaccines of allVaccinationsSpainDataList | filter: textToSearch: 'ccaa'">
+    <ion-item (click)="goToVaccinationCCAAStats(vaccines)" *ngIf="vaccines.ccaa != 'Totales'">
+      <img class="img-flags" [src]="vaccinationsService.getCCAAFlag(vaccines.ccaa)" />{{vaccines.ccaa}}<br>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-toolbar *ngIf="!loading">
+  <ion-searchbar animated placeholder="Buscar CA" (ionChange)="searchItem($event)"></ion-searchbar>
+</ion-toolbar>

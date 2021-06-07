@@ -1,0 +1,22 @@
+export const CCAA_CODES = [ 
+    {"name": "Andalucía", "code": "AN"},
+    {"name": "Aragón", "code": "AR"},
+    {"name": "Asturias", "code": "AS"},
+    {"name": "Baleares", "code": "BA"},
+    {"name": "Canarias", "code": "CAN"},
+    {"name": "Cantabria", "code": "CA"},
+    {"name": "Castilla y Leon", "code": "CLE"},
+    {"name": "Castilla La Mancha", "code": "CLM"},
+    {"name": "Cataluña", "code": "CT"},
+    {"name": "C. Valenciana", "code": "CV"},
+    {"name": "Extremadura", "code": "EX"},
+    {"name": "Galicia", "code": "GA"},
+    {"name": "La Rioja", "code": "LR"},
+    {"name": "Madrid", "code": "MA"},
+    {"name": "Murcia", "code": "MU"},
+    {"name": "Navarra", "code": "NA"},
+    {"name": "País Vasco", "code": "PV"},
+    {"name": "Ceuta", "code": "CU"},
+    {"name": "Melilla", "code": "ME"},
+    {"name": "Fuerzas Armadas", "code": "FAA"}
+]

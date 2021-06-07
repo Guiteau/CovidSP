@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title> Datos {{subRegion.name_es}} </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <div class="image-container">
+      <img class="image-covid" src="../../assets/images/covid.jpg"/>
+    </div>
+    <ion-card-header>
+      <ion-card-title>{{subRegion.name_es}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="label-container">
+        <ion-label *ngIf="subRegion.today_new_confirmed != null"><span>Nuevos casos hoy:</span> {{subRegion.today_new_confirmed.toLocaleString()}}</ion-label><br>
+        <ion-label *ngIf="subRegion.today_new_deaths != null"><span>Muertes hoy:</span> {{subRegion.today_new_deaths.toLocaleString()}}</ion-label><br>
+        <ion-label *ngIf="subRegion.today_confirmed != null"><span>Casos totales:</span> {{subRegion.today_confirmed.toLocaleString()}}</ion-label><br>
+        <ion-label *ngIf="subRegion.today_deaths != null"><span>Muertes totales:</span> {{subRegion.today_deaths.toLocaleString()}}</ion-label><br>
+        <ion-label *ngIf="subRegion.today_vs_yesterday_confirmed != null"><span>Variación casos hoy-ayer:</span> {{subRegion.today_vs_yesterday_confirmed.toLocaleString()}}%</ion-label><br>
+        <ion-label *ngIf="subRegion.today_vs_yesterday_deaths != null"><span>Variación muertes hoy-ayer:</span> {{subRegion.today_vs_yesterday_deaths.toLocaleString()}}%</ion-label><br>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<section class="full-width">
+  <ion-button expand="full" color="secondary" (click)="goBack()">Volver</ion-button>
+</section>

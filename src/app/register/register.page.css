@@ -1,0 +1,29 @@
+ion-content{
+    text-align: center;
+}
+
+ion-title{
+    padding-left: 45px;
+}
+
+ion-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+p{
+    font-size: 12px;
+}
+
+ion-button{
+    margin-top: 10px;
+}
+
+.conditions-container{
+    display: flex;
+    padding: 10px;
+}
+
+ion-label{
+    font-size: 12px;
+}

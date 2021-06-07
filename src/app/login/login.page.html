@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Login </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="items-container">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" placeholder="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password" placeholder="contraseña"></ion-input>
+    </ion-item>
+  </div>
+  <div class="remember-container">
+    <ion-checkbox color="primary" [(ngModel)]="rememberUserInfo"></ion-checkbox>
+    <ion-label id="remember-label">Recordar mis datos</ion-label>
+  </div>
+  <div class="button-container">
+    <ion-button (click)="checkLogin()">Login</ion-button>
+  </div>
+</ion-content>

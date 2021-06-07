@@ -1,0 +1,20 @@
+span{
+    font-weight: bold;
+}
+
+ion-label{
+    padding-bottom: 50px;
+}
+
+.img-flags{
+    padding-right: 25px;
+}
+
+ion-spinner {
+    display: block;
+    margin: auto;
+}
+
+ion-title{
+    padding: 10px;
+}

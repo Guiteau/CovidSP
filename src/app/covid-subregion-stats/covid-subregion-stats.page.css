@@ -1,0 +1,22 @@
+ion-label{
+    padding-bottom: 50px;
+}
+
+span{
+    font-weight: bold;
+}
+
+ion-card{
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+ion-card-title{
+    text-align: center;
+}
+
+ion-card-content{
+    height: 200px;
+}
